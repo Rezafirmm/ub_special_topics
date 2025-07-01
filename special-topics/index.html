@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html lang="fa-IR" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Tailwindcss -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@latest/dist/tailwind.min.css" rel="stylesheet" />
+    <!-- Custom css -->
+    <link rel="stylesheet" href="styles.css" />
+
+    <title>Landing page</title>
+  </head>
+  <body class="bg-dark min-h-screen 2xl:max-w-screen-2xl mx-auto">
+    <!-- ==== Header ==== -->
+    <header class="w-full fixed mx-auto top-0 z-50 transition-all duration-300 bg-transparent">
+      <div id="mainHeader" class="flex h-full justify-between items-center px-8 md:pt-8 py-5">
+        <!-- menu -->
+        <button class="md:hidden" id="menuToggle">
+          <svg id="iconOpen" xmlns="http://www.w3.org/2000/svg" width="27" height="16" viewBox="0 0 27 16" fill="none">
+            <line x1="26.25" y1="0.75" x2="0.75" y2="0.75" stroke="white" stroke-width="1.5" stroke-linecap="round" />
+            <line x1="26.25" y1="7.75" x2="0.75" y2="7.75" stroke="white" stroke-width="1.5" stroke-linecap="round" />
+            <line x1="26.25" y1="14.75" x2="0.75" y2="14.75" stroke="white" stroke-width="1.5" stroke-linecap="round" />
+          </svg>
+
+          <svg
+            id="iconClose"
+            class="hidden"
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="white"
+            stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+
+        <!-- mobile menu -->
+        <div
+          id="mobileMenu"
+          class="absolute flex flex-col p-4 gap-8 z-20 bg-gray-800 transition-all duration-200 mx-auto rounded-lg"
+          style="width: 90%; top: 90%; height: 250px">
+          <a href="#">تماس با ما</a>
+          <a href="#">درباره ما</a>
+          <a href="#">خانه</a>
+        </div>
+
+        <!-- logo -->
+        <div class="flex items-center gap-20">
+          <div class="flex flex-col items-center">
+            <img src="./assets/Logo.svg" alt="logo" class="m-0" />
+            <span class="hidden md:inline-flex">
+              <p class="text-center text-white font-bold">
+                UBComp5 <br />
+                ACM
+              </p>
+            </span>
+          </div>
+
+          <nav class="hidden md:flex text-white gap-8">
+            <a href="#">خانه</a>
+            <a href="#">درباره ما</a>
+            <a href="#">تماس با ما</a>
+          </nav>
+        </div>
+
+        <!-- login -->
+        <button
+          type="button"
+          class="relative inline-block cursor-pointer hover:opacity-90 transition-opacity focus:outline-none">
+          <div class="relative hidden md:inline-block">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="216"
+              height="106"
+              viewBox="0 0 216 106"
+              fill="none"
+              style="fill: #47cf73; filter: drop-shadow(0px 0px 30px rgba(71, 207, 115, 0.8))">
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M30 37C30 33.134 33.134 30 37 30H172.862C174.718 30 176.499 30.7375 177.811 32.0502L183.95 38.1885C185.262 39.5013 186 41.2818 186 43.1383V68.5351C186 72.4011 182.866 75.5351 179 75.5351H42.295C40.4385 75.5351 38.658 74.7976 37.3453 73.4849L32.0503 68.1898C30.7375 66.8771 30 65.0966 30 63.2401V37Z"
+                fill="#47CF73" />
+            </svg>
+            <span class="absolute inset-0 flex items-center justify-center text-black font-bold pointer-events-none">
+              ثبت نام / ورود
+            </span>
+          </div>
+          <span class="md:hidden text-primary text-sm font-bold">ثبت نام / ورود</span>
+        </button>
+      </div>
+    </header>
+    <!-- ==== Main ==== -->
+    <main>
+      <img src="/assets/lines.png" alt="" class="absolute -top-25 hidden xl:block" style="right: 60%; z-index: -1000" />
+
+      <!-- == hero section == -->
+      <section class="w-100 mt-24 md:mt-28 flex relative items-center justify-between">
+        <div class="text-white">
+          <!-- Main text -->
+          <div class="flex flex-col gap-5 p-7">
+            <h1 class="text-3xl md:text-4xl max-w-xl font-black">
+              پنجمین دوره مسابقات برنامه نویسی آنلاین دانشگاه دولتی بجنورد
+            </h1>
+            <h4 class="font-semibold">۱۲ الی ۲۰ اسفند ۱۴۰۰ به صورت غیر حضوری و آنلاین</h4>
+            <p class="max-w-xl">
+              لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و
+              متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و
+              کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی در شصت و سه درصد گذشته حال و آینده،
+              شناخت فراوان جامعه و متخصصان را می طلبد، تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی
+              الخصوص طراحان خلاقی، و فرهنگ پیشرو در زبان فارسی ایجاد کرد.
+            </p>
+            <!-- buttons -->
+            <div class="flex items-center gap-8">
+              <button class="relative inline-block cursor-pointer">
+                <svg xmlns="http://www.w3.org/2000/svg" width="185" height="106" viewBox="0 0 185 106" fill="none">
+                  <g filter="url(#filter0_d_587_55)">
+                    <mask id="path-1-inside-1_587_55" fill="white">
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M30 37C30 33.134 33.134 30 37 30H143.435C145.559 30 147.569 30.9649 148.898 32.6229L153.463 38.3202C154.458 39.5621 155 41.1059 155 42.6973V68.5351C155 72.4011 151.866 75.5351 148 75.5351H40.8895C38.7649 75.5351 36.7553 74.5702 35.4268 72.9123L31.5373 68.0582C30.5422 66.8163 30 65.2724 30 63.6811V37Z" />
+                    </mask>
+                    <path
+                      d="M153.463 38.3202L152.682 38.9455L153.463 38.3202ZM148.898 32.6229L148.117 33.2482L148.898 32.6229ZM143.435 29H37V31H143.435V29ZM154.243 37.6949L149.678 31.9976L148.117 33.2482L152.682 38.9455L154.243 37.6949ZM156 68.5351V42.6973H154V68.5351H156ZM40.8895 76.5351H148V74.5351H40.8895V76.5351ZM30.757 68.6835L34.6464 73.5376L36.2072 72.287L32.3177 67.4329L30.757 68.6835ZM29 37V63.6811H31V37H29ZM32.3177 67.4329C31.4648 66.3684 31 65.0451 31 63.6811H29C29 65.4998 29.6197 67.2642 30.757 68.6835L32.3177 67.4329ZM40.8895 74.5351C39.0684 74.5351 37.3459 73.7081 36.2072 72.287L34.6464 73.5376C36.1647 75.4324 38.4614 76.5351 40.8895 76.5351V74.5351ZM154 68.5351C154 71.8488 151.314 74.5351 148 74.5351V76.5351C152.418 76.5351 156 72.9534 156 68.5351H154ZM152.682 38.9455C153.535 40.0099 154 41.3333 154 42.6973H156C156 40.8786 155.38 39.1142 154.243 37.6949L152.682 38.9455ZM37 29C32.5817 29 29 32.5817 29 37H31C31 33.6863 33.6863 31 37 31V29ZM143.435 31C145.256 31 146.978 31.8271 148.117 33.2482L149.678 31.9976C148.16 30.1027 145.863 29 143.435 29V31Z"
+                      fill="#47CF73"
+                      mask="url(#path-1-inside-1_587_55)" />
+                  </g>
+                  <defs>
+                    <filter
+                      id="filter0_d_587_55"
+                      x="0"
+                      y="0"
+                      width="185"
+                      height="105.535"
+                      filterUnits="userSpaceOnUse"
+                      color-interpolation-filters="sRGB">
+                      <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                      <feColorMatrix
+                        in="SourceAlpha"
+                        type="matrix"
+                        values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                        result="hardAlpha" />
+                      <feOffset />
+                      <feGaussianBlur stdDeviation="15" />
+                      <feComposite in2="hardAlpha" operator="out" />
+                      <feColorMatrix
+                        type="matrix"
+                        values="0 0 0 0 0.278431 0 0 0 0 0.811765 0 0 0 0 0.45098 0 0 0 0.8 0" />
+                      <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_587_55" />
+                      <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_587_55" result="shape" />
+                    </filter>
+                  </defs>
+                </svg>
+                <span class="absolute top-10"> ثبت نام کنید </span>
+              </button>
+              <button class="flex items-center justify-center gap-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
+                  <circle cx="14" cy="14" r="14" fill="#47CF73" />
+                  <path d="M18.9 14L11.55 18.2435L11.55 9.75648L18.9 14Z" fill="#131518" />
+                </svg>
+                <p>مشاهده ویدیو</p>
+              </button>
+            </div>
+          </div>
+          <!-- numbers -->
+          <div class="border-t-2 border-b-2 md:border-b-0 border-gray-600 py-5 flex justify-around items-center">
+            <div class="flex gap-5">
+              <!-- icon -->
+              <div>
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-8 h-8">
+                  <path
+                    d="M5.00006 11.0782V13.6266C5.00006 15.4879 5.00006 16.4185 5.24477 17.1717C5.73936 18.6939 6.93278 19.8873 8.45497 20.3819C9.20813 20.6266 10.1388 20.6266 12.0001 20.6266C13.8613 20.6266 14.792 20.6266 15.5451 20.3819C17.0673 19.8873 18.2607 18.6939 18.7553 17.1717C19.0001 16.4185 19.0001 15.4879 19.0001 13.6266V11.0815M19.0001 11.0815C18.0428 11.4695 16.8602 11.8909 15.4529 12.3935L13.3455 13.1462C12.6796 13.384 12.3466 13.5029 12.0002 13.5029C11.6537 13.5029 11.3208 13.384 10.6548 13.1462L8.5474 12.3935C4.14674 10.8218 1.94641 10.036 1.94641 8.62656C1.94641 7.21713 4.14674 6.43129 8.5474 4.8596L10.6548 4.10695C11.3208 3.8691 11.6537 3.75018 12.0002 3.75018C12.3466 3.75018 12.6796 3.8691 13.3455 4.10695L15.4529 4.8596C19.8536 6.43129 22.0539 7.21713 22.0539 8.62656C22.0539 9.58527 21.0362 10.2563 19.0001 11.0815Z"
+                    stroke="#6B6B6B"
+                    stroke-width="1.5" />
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M8.23248 4.17557L10.4024 3.40058C10.4355 3.38877 10.4682 3.37707 10.5005 3.3655C11.0703 3.16147 11.5208 3.00012 12 3.00012C12.4793 3.00012 12.9298 3.16147 13.4996 3.36551C13.5319 3.37707 13.5646 3.38877 13.5977 3.40058L15.7676 4.17557C17.9151 4.94254 19.603 5.54533 20.7481 6.13771C21.855 6.71026 22.8038 7.44621 22.8038 8.6265C22.8038 9.80679 21.855 10.5427 20.7481 11.1153C19.603 11.7077 17.9151 12.3105 15.7676 13.0774L13.5977 13.8524C13.5646 13.8642 13.5319 13.8759 13.4996 13.8875C12.9298 14.0915 12.4793 14.2529 12 14.2529C11.5208 14.2529 11.0703 14.0915 10.5005 13.8875C10.4682 13.8759 10.4355 13.8642 10.4024 13.8524L8.23247 13.0774C6.08493 12.3105 4.39712 11.7077 3.25195 11.1153C2.14511 10.5427 1.19629 9.80679 1.19629 8.6265C1.19629 7.44621 2.14511 6.71026 3.25195 6.13771C4.39712 5.54533 6.08494 4.94254 8.23248 4.17557ZM3.94113 7.47002C2.84763 8.03567 2.69629 8.39736 2.69629 8.6265C2.69629 8.85564 2.84763 9.21733 3.94113 9.78298C4.98519 10.3231 6.57621 10.8931 8.79954 11.6872L10.9069 12.4398C11.622 12.6952 11.8135 12.7529 12 12.7529C12.1865 12.7529 12.3781 12.6952 13.0931 12.4398L15.2005 11.6872C17.4239 10.8931 19.0149 10.3231 20.059 9.78298C21.1524 9.21733 21.3038 8.85564 21.3038 8.6265C21.3038 8.39736 21.1524 8.03567 20.059 7.47002C19.0149 6.92994 17.4239 6.3599 15.2005 5.56584L13.0931 4.81319C12.3781 4.55781 12.1865 4.50012 12 4.50012C11.8135 4.50012 11.622 4.55781 10.9069 4.81319L8.79954 5.56584C6.57621 6.3599 4.98519 6.92994 3.94113 7.47002ZM1.99993 16.3765C1.58572 16.3765 1.19629 16.0524 1.19629 15.6382V8.6265C1.19629 8.21229 1.58572 7.8765 1.99993 7.8765C2.41415 7.8765 2.69629 8.21229 2.69629 8.6265L2.74993 9.85306V15.6265C2.74993 16.0407 2.41415 16.3765 1.99993 16.3765Z"
+                    fill="#6B6B6B" />
+                </svg>
+              </div>
+              <!-- text -->
+              <div class="md:text-center">
+                <p class="text-sm">ثبت نام کننده</p>
+                <span>28</span>
+              </div>
+            </div>
+
+            <div class="flex gap-5">
+              <!-- icon -->
+              <div>
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-8 h-8">
+                  <path d="M11.9951 16.6768V14.1398" stroke="#6B6B6B" stroke-linecap="round" stroke-linejoin="round" />
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M18.1899 5.3302C19.8799 5.3302 21.2399 6.7002 21.2399 8.3902V11.8302C18.7799 13.2702 15.5299 14.1402 11.9899 14.1402C8.44988 14.1402 5.20988 13.2702 2.74988 11.8302V8.3802C2.74988 6.6902 4.11988 5.3302 5.80988 5.3302H18.1899Z"
+                    stroke="#6B6B6B"
+                    stroke-linecap="round"
+                    stroke-linejoin="round" />
+                  <path
+                    d="M15.4951 5.32582V4.95982C15.4951 3.73982 14.5051 2.74982 13.2851 2.74982H10.7051C9.48512 2.74982 8.49512 3.73982 8.49512 4.95982V5.32582"
+                    stroke="#6B6B6B"
+                    stroke-linecap="round"
+                    stroke-linejoin="round" />
+                  <path
+                    d="M2.77441 15.483L2.96341 17.992C3.09141 19.683 4.50041 20.99 6.19541 20.99H17.7944C19.4894 20.99 20.8984 19.683 21.0264 17.992L21.2154 15.483"
+                    stroke="#6B6B6B"
+                    stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </svg>
+              </div>
+              <!-- text -->
+              <div class="md:text-center">
+                <p class="text-sm">حامیان برنامه</p>
+                <span>08</span>
+              </div>
+            </div>
+
+            <div class="flex gap-5">
+              <!-- icon -->
+              <div>
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-8 h-8">
+                  <path
+                    d="M17.8877 10.8967C19.2827 10.7007 20.3567 9.50467 20.3597 8.05567C20.3597 6.62767 19.3187 5.44367 17.9537 5.21967"
+                    stroke="#6B6B6B"
+                    stroke-linecap="round"
+                    stroke-linejoin="round" />
+                  <path
+                    d="M19.7285 14.2503C21.0795 14.4523 22.0225 14.9253 22.0225 15.9003C22.0225 16.5713 21.5785 17.0073 20.8605 17.2813"
+                    stroke="#6B6B6B"
+                    stroke-linecap="round"
+                    stroke-linejoin="round" />
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M11.8867 14.6638C8.67273 14.6638 5.92773 15.1508 5.92773 17.0958C5.92773 19.0398 8.65573 19.5408 11.8867 19.5408C15.1007 19.5408 17.8447 19.0588 17.8447 17.1128C17.8447 15.1668 15.1177 14.6638 11.8867 14.6638Z"
+                    stroke="#6B6B6B"
+                    stroke-linecap="round"
+                    stroke-linejoin="round" />
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M11.8867 11.8879C13.9957 11.8879 15.7057 10.1789 15.7057 8.06888C15.7057 5.95988 13.9957 4.24988 11.8867 4.24988C9.77766 4.24988 8.06766 5.95988 8.06766 8.06888C8.05966 10.1709 9.75666 11.8809 11.8587 11.8879H11.8867Z"
+                    stroke="#6B6B6B"
+                    stroke-linecap="round"
+                    stroke-linejoin="round" />
+                  <path
+                    d="M5.88472 10.8967C4.48872 10.7007 3.41572 9.50467 3.41272 8.05567C3.41272 6.62767 4.45372 5.44367 5.81872 5.21967"
+                    stroke="#6B6B6B"
+                    stroke-linecap="round"
+                    stroke-linejoin="round" />
+                  <path
+                    d="M4.04388 14.2503C2.69288 14.4523 1.74988 14.9253 1.74988 15.9003C1.74988 16.5713 2.19388 17.0073 2.91188 17.2813"
+                    stroke="#6B6B6B"
+                    stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </svg>
+              </div>
+              <!-- text -->
+              <div class="md:text-center">
+                <p class="text-sm">برگزارکنندگاه</p>
+                <span>04</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- hero img -->
+        <div class="hidden md:inline-block relative">
+          <img src="./assets/heroImg.png" alt="" class="w-100" />
+          <img src="./assets/heroCodes.png" alt="codes" class="absolute top-3/4 -right-20" />
+          <img src="./assets/cIcon.png" alt="cIcon" class="absolute top-3/4 mt-6 -right-28" />
+        </div>
+      </section>
+
+      <!-- == banner == -->
+      <div class="w-full mt-28 bg-white p-5">
+        <!-- images -->
+        <div class="flex items-center justify-around gap-8">
+          <div style="filter: grayscale(100%)">
+            <img src="./assets/banner/amigh.png" alt="logo" />
+          </div>
+          <div style="filter: grayscale(100%)">
+            <img src="./assets/banner/bojnurd.png" alt="logo" />
+          </div>
+          <div style="filter: grayscale(100%)">
+            <img src="./assets/banner/daria.png" alt="logo" />
+          </div>
+          <div style="filter: grayscale(100%)">
+            <img src="./assets/banner/snapp.png" alt="logo" />
+          </div>
+        </div>
+      </div>
+
+      <!-- == contest rules == -->
+      <section class="mt-20">
+        <h3 class="text-white font-bold md:text-2xl">نحوه برگزاری مسابقه</h3>
+        <!-- mobile roadmap -->
+        <div class="relative md:hidden">
+          <div class="flex justify-center mt-12 relative">
+            <div class="w-1/5 absolute flex flex-col gap-24" style="right: 58%; top: -5px">
+              <p>پاسخ به سوال</p>
+              <p>افتتاحیه و مرحله مقدماتی</p>
+              <p>انتخابی نفر اول</p>
+            </div>
+            <img src="./assets/mobileRoadmap.png" alt="mobile line" class="w-50" />
+            <div class="w-1/5 absolute flex flex-col gap-28 text-left" style="right: 22%; top: 17%">
+              <p>ثبت نام</p>
+              <p>مرحله نهایی</p>
+              <p>اختتامیه</p>
+            </div>
+          </div>
+          <button
+            type="button"
+            class="relative right-1/4 mt-10 inline-block cursor-pointer hover:opacity-90 transition-opacity focus:outline-none">
+            <div class="relative">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="216"
+                height="106"
+                viewBox="0 0 216 106"
+                fill="none"
+                style="fill: #47cf73; filter: drop-shadow(0px 0px 30px rgba(71, 207, 115, 0.8))">
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M30 37C30 33.134 33.134 30 37 30H172.862C174.718 30 176.499 30.7375 177.811 32.0502L183.95 38.1885C185.262 39.5013 186 41.2818 186 43.1383V68.5351C186 72.4011 182.866 75.5351 179 75.5351H42.295C40.4385 75.5351 38.658 74.7976 37.3453 73.4849L32.0503 68.1898C30.7375 66.8771 30 65.0966 30 63.2401V37Z"
+                  fill="#47CF73" />
+              </svg>
+              <span class="absolute inset-0 flex items-center justify-center text-black font-bold pointer-events-none">
+                ثبت نام
+              </span>
+            </div>
+          </button>
+
+          <img src="./assets/dashLine1.png" alt="dashed" class="absolute top-full" />
+          <img src="./assets/dashLine2.png" alt="dashed" class="absolute top-1/4" style="right: 83%" />
+        </div>
+        <!-- desktop roadmap -->
+        <div class="hidden md:flex flex-col justify-center relative">
+          <p class="absolute text-2xl font-bold" style="top: 11%; right: 76%">پاسخ به سوال</p>
+          <p class="absolute text-2xl font-bold" style="top: 14%; right: 54%">ثبت نام</p>
+          <p class="absolute text-2xl font-bold" style="top: 58%; right: 71%">افتتاحیه و مرحله مقدماتی</p>
+          <p class="absolute text-2xl font-bold" style="top: 33%; right: 33%">مرحله نهایی</p>
+          <p class="absolute text-2xl font-bold" style="top: 89%; right: 59%">مرحله انتخاب نفر اول</p>
+          <p class="absolute text-2xl font-bold" style="top: 80%; right: 19%">اختتامیه</p>
+          <img src="./assets/desktopRoadmap.png" alt="desktopRoadmap" class="w-2/4 mt-14 mx-auto" />
+        </div>
+      </section>
+
+      <!-- == contest information == -->
+      <section class="mt-20 mx-2">
+        <!-- mobile version -->
+        <div class="flex flex-col md:hidden gap-4">
+          <!-- cards -->
+          <div class="flex justify-around">
+            <div class="flex flex-col items-center gap-2 border rounded-2xl bg-white/10 backdrop-blur">
+              <img src="./assets/contest_information/download 4.svg" alt="icon" class="w-2/3" />
+              <p class="font-bold text-md">جوایز مسابقه</p>
+              <button class="relative">
+                <svg xmlns="http://www.w3.org/2000/svg" width="145" height="89" viewBox="0 0 145 89" fill="none">
+                  <g filter="url(#filter0_d_587_156)">
+                    <mask id="path-1-inside-1_587_156" fill="white">
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M30 37.1754C30 33.3094 33.134 30.1754 37 30.1754H106.271C108.275 30.1754 110.182 31.0337 111.51 32.533L113.239 34.484C114.374 35.7643 115 37.4158 115 39.1264V51.1754C115 55.0414 111.866 58.1754 108 58.1754H38.2693C36.266 58.1754 34.3588 57.3171 33.0302 55.8178L31.7609 54.3853C30.6264 53.105 30 51.4536 30 49.7429V37.1754Z" />
+                    </mask>
+                    <path
+                      d="M31.7609 54.3853L31.0124 55.0485L31.7609 54.3853ZM33.0302 55.8178L32.2818 56.481L33.0302 55.8178ZM113.239 34.484L112.491 35.1472L113.239 34.484ZM111.51 32.533L112.259 31.8698L111.51 32.533ZM106.271 29.1754H37V31.1754H106.271V29.1754ZM113.988 33.8208L112.259 31.8698L110.762 33.1962L112.491 35.1472L113.988 33.8208ZM116 51.1754V39.1264H114V51.1754H116ZM38.2693 59.1754H108V57.1754H38.2693V59.1754ZM31.0124 55.0485L32.2818 56.481L33.7786 55.1546L32.5093 53.7221L31.0124 55.0485ZM29 37.1754V49.7429H31V37.1754H29ZM32.5093 53.7221C31.5369 52.6247 31 51.2092 31 49.7429H29C29 51.698 29.7159 53.5853 31.0124 55.0485L32.5093 53.7221ZM38.2693 57.1754C36.5522 57.1754 34.9174 56.4397 33.7786 55.1546L32.2818 56.481C33.8001 58.1945 35.9799 59.1754 38.2693 59.1754V57.1754ZM114 51.1754C114 54.4891 111.314 57.1754 108 57.1754V59.1754C112.418 59.1754 116 55.5937 116 51.1754H114ZM112.491 35.1472C113.463 36.2446 114 37.6601 114 39.1264H116C116 37.1714 115.284 35.284 113.988 33.8208L112.491 35.1472ZM37 29.1754C32.5817 29.1754 29 32.7571 29 37.1754H31C31 33.8617 33.6863 31.1754 37 31.1754V29.1754ZM106.271 31.1754C107.988 31.1754 109.623 31.9111 110.762 33.1962L112.259 31.8698C110.74 30.1563 108.561 29.1754 106.271 29.1754V31.1754Z"
+                      fill="white"
+                      mask="url(#path-1-inside-1_587_156)" />
+                  </g>
+                  <defs>
+                    <filter
+                      id="filter0_d_587_156"
+                      x="0"
+                      y="0.175415"
+                      width="145"
+                      height="88"
+                      filterUnits="userSpaceOnUse"
+                      color-interpolation-filters="sRGB">
+                      <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                      <feColorMatrix
+                        in="SourceAlpha"
+                        type="matrix"
+                        values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                        result="hardAlpha" />
+                      <feOffset />
+                      <feGaussianBlur stdDeviation="15" />
+                      <feComposite in2="hardAlpha" operator="out" />
+                      <feColorMatrix
+                        type="matrix"
+                        values="0 0 0 0 0.278431 0 0 0 0 0.811765 0 0 0 0 0.45098 0 0 0 0.8 0" />
+                      <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_587_156" />
+                      <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_587_156" result="shape" />
+                    </filter>
+                  </defs>
+                </svg>
+                <p class="absolute" style="top: 35%">بیشتر</p>
+              </button>
+            </div>
+            <div class="flex flex-col items-center gap-2 border rounded-2xl bg-white/10 backdrop-blur">
+              <img src="./assets/contest_information/download 6.svg" alt="icon" class="w-2/3" />
+              <p class="font-bold text-md">جوایز مسابقه</p>
+              <button class="relative">
+                <svg xmlns="http://www.w3.org/2000/svg" width="145" height="89" viewBox="0 0 145 89" fill="none">
+                  <g filter="url(#filter0_d_587_156)">
+                    <mask id="path-1-inside-1_587_156" fill="white">
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M30 37.1754C30 33.3094 33.134 30.1754 37 30.1754H106.271C108.275 30.1754 110.182 31.0337 111.51 32.533L113.239 34.484C114.374 35.7643 115 37.4158 115 39.1264V51.1754C115 55.0414 111.866 58.1754 108 58.1754H38.2693C36.266 58.1754 34.3588 57.3171 33.0302 55.8178L31.7609 54.3853C30.6264 53.105 30 51.4536 30 49.7429V37.1754Z" />
+                    </mask>
+                    <path
+                      d="M31.7609 54.3853L31.0124 55.0485L31.7609 54.3853ZM33.0302 55.8178L32.2818 56.481L33.0302 55.8178ZM113.239 34.484L112.491 35.1472L113.239 34.484ZM111.51 32.533L112.259 31.8698L111.51 32.533ZM106.271 29.1754H37V31.1754H106.271V29.1754ZM113.988 33.8208L112.259 31.8698L110.762 33.1962L112.491 35.1472L113.988 33.8208ZM116 51.1754V39.1264H114V51.1754H116ZM38.2693 59.1754H108V57.1754H38.2693V59.1754ZM31.0124 55.0485L32.2818 56.481L33.7786 55.1546L32.5093 53.7221L31.0124 55.0485ZM29 37.1754V49.7429H31V37.1754H29ZM32.5093 53.7221C31.5369 52.6247 31 51.2092 31 49.7429H29C29 51.698 29.7159 53.5853 31.0124 55.0485L32.5093 53.7221ZM38.2693 57.1754C36.5522 57.1754 34.9174 56.4397 33.7786 55.1546L32.2818 56.481C33.8001 58.1945 35.9799 59.1754 38.2693 59.1754V57.1754ZM114 51.1754C114 54.4891 111.314 57.1754 108 57.1754V59.1754C112.418 59.1754 116 55.5937 116 51.1754H114ZM112.491 35.1472C113.463 36.2446 114 37.6601 114 39.1264H116C116 37.1714 115.284 35.284 113.988 33.8208L112.491 35.1472ZM37 29.1754C32.5817 29.1754 29 32.7571 29 37.1754H31C31 33.8617 33.6863 31.1754 37 31.1754V29.1754ZM106.271 31.1754C107.988 31.1754 109.623 31.9111 110.762 33.1962L112.259 31.8698C110.74 30.1563 108.561 29.1754 106.271 29.1754V31.1754Z"
+                      fill="white"
+                      mask="url(#path-1-inside-1_587_156)" />
+                  </g>
+                  <defs>
+                    <filter
+                      id="filter0_d_587_156"
+                      x="0"
+                      y="0.175415"
+                      width="145"
+                      height="88"
+                      filterUnits="userSpaceOnUse"
+                      color-interpolation-filters="sRGB">
+                      <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                      <feColorMatrix
+                        in="SourceAlpha"
+                        type="matrix"
+                        values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                        result="hardAlpha" />
+                      <feOffset />
+                      <feGaussianBlur stdDeviation="15" />
+                      <feComposite in2="hardAlpha" operator="out" />
+                      <feColorMatrix
+                        type="matrix"
+                        values="0 0 0 0 0.278431 0 0 0 0 0.811765 0 0 0 0 0.45098 0 0 0 0.8 0" />
+                      <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_587_156" />
+                      <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_587_156" result="shape" />
+                    </filter>
+                  </defs>
+                </svg>
+                <p class="absolute" style="top: 35%">بیشتر</p>
+              </button>
+            </div>
+            <div class="flex flex-col items-center gap-2 border rounded-2xl bg-white/10 backdrop-blur">
+              <img src="./assets/contest_information/download 3.svg" alt="icon" class="w-2/3" />
+              <p class="font-bold text-md">جوایز مسابقه</p>
+              <button class="relative">
+                <svg xmlns="http://www.w3.org/2000/svg" width="145" height="89" viewBox="0 0 145 89" fill="none">
+                  <g filter="url(#filter0_d_587_156)">
+                    <mask id="path-1-inside-1_587_156" fill="white">
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M30 37.1754C30 33.3094 33.134 30.1754 37 30.1754H106.271C108.275 30.1754 110.182 31.0337 111.51 32.533L113.239 34.484C114.374 35.7643 115 37.4158 115 39.1264V51.1754C115 55.0414 111.866 58.1754 108 58.1754H38.2693C36.266 58.1754 34.3588 57.3171 33.0302 55.8178L31.7609 54.3853C30.6264 53.105 30 51.4536 30 49.7429V37.1754Z" />
+                    </mask>
+                    <path
+                      d="M31.7609 54.3853L31.0124 55.0485L31.7609 54.3853ZM33.0302 55.8178L32.2818 56.481L33.0302 55.8178ZM113.239 34.484L112.491 35.1472L113.239 34.484ZM111.51 32.533L112.259 31.8698L111.51 32.533ZM106.271 29.1754H37V31.1754H106.271V29.1754ZM113.988 33.8208L112.259 31.8698L110.762 33.1962L112.491 35.1472L113.988 33.8208ZM116 51.1754V39.1264H114V51.1754H116ZM38.2693 59.1754H108V57.1754H38.2693V59.1754ZM31.0124 55.0485L32.2818 56.481L33.7786 55.1546L32.5093 53.7221L31.0124 55.0485ZM29 37.1754V49.7429H31V37.1754H29ZM32.5093 53.7221C31.5369 52.6247 31 51.2092 31 49.7429H29C29 51.698 29.7159 53.5853 31.0124 55.0485L32.5093 53.7221ZM38.2693 57.1754C36.5522 57.1754 34.9174 56.4397 33.7786 55.1546L32.2818 56.481C33.8001 58.1945 35.9799 59.1754 38.2693 59.1754V57.1754ZM114 51.1754C114 54.4891 111.314 57.1754 108 57.1754V59.1754C112.418 59.1754 116 55.5937 116 51.1754H114ZM112.491 35.1472C113.463 36.2446 114 37.6601 114 39.1264H116C116 37.1714 115.284 35.284 113.988 33.8208L112.491 35.1472ZM37 29.1754C32.5817 29.1754 29 32.7571 29 37.1754H31C31 33.8617 33.6863 31.1754 37 31.1754V29.1754ZM106.271 31.1754C107.988 31.1754 109.623 31.9111 110.762 33.1962L112.259 31.8698C110.74 30.1563 108.561 29.1754 106.271 29.1754V31.1754Z"
+                      fill="white"
+                      mask="url(#path-1-inside-1_587_156)" />
+                  </g>
+                  <defs>
+                    <filter
+                      id="filter0_d_587_156"
+                      x="0"
+                      y="0.175415"
+                      width="145"
+                      height="88"
+                      filterUnits="userSpaceOnUse"
+                      color-interpolation-filters="sRGB">
+                      <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                      <feColorMatrix
+                        in="SourceAlpha"
+                        type="matrix"
+                        values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                        result="hardAlpha" />
+                      <feOffset />
+                      <feGaussianBlur stdDeviation="15" />
+                      <feComposite in2="hardAlpha" operator="out" />
+                      <feColorMatrix
+                        type="matrix"
+                        values="0 0 0 0 0.278431 0 0 0 0 0.811765 0 0 0 0 0.45098 0 0 0 0.8 0" />
+                      <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_587_156" />
+                      <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_587_156" result="shape" />
+                    </filter>
+                  </defs>
+                </svg>
+                <p class="absolute" style="top: 35%">بیشتر</p>
+              </button>
+            </div>
+          </div>
+          <div class="flex justify-around gap-4">
+            <div class="flex basis-1/3 flex-col items-center gap-2 border rounded-2xl bg-white/10 backdrop-blur">
+              <img src="./assets/contest_information/download 5.svg" alt="icon" class="w-2/3" />
+              <p class="font-bold text-md">جوایز مسابقه</p>
+              <button class="relative">
+                <svg xmlns="http://www.w3.org/2000/svg" width="145" height="89" viewBox="0 0 145 89" fill="none">
+                  <g filter="url(#filter0_d_587_156)">
+                    <mask id="path-1-inside-1_587_156" fill="white">
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M30 37.1754C30 33.3094 33.134 30.1754 37 30.1754H106.271C108.275 30.1754 110.182 31.0337 111.51 32.533L113.239 34.484C114.374 35.7643 115 37.4158 115 39.1264V51.1754C115 55.0414 111.866 58.1754 108 58.1754H38.2693C36.266 58.1754 34.3588 57.3171 33.0302 55.8178L31.7609 54.3853C30.6264 53.105 30 51.4536 30 49.7429V37.1754Z" />
+                    </mask>
+                    <path
+                      d="M31.7609 54.3853L31.0124 55.0485L31.7609 54.3853ZM33.0302 55.8178L32.2818 56.481L33.0302 55.8178ZM113.239 34.484L112.491 35.1472L113.239 34.484ZM111.51 32.533L112.259 31.8698L111.51 32.533ZM106.271 29.1754H37V31.1754H106.271V29.1754ZM113.988 33.8208L112.259 31.8698L110.762 33.1962L112.491 35.1472L113.988 33.8208ZM116 51.1754V39.1264H114V51.1754H116ZM38.2693 59.1754H108V57.1754H38.2693V59.1754ZM31.0124 55.0485L32.2818 56.481L33.7786 55.1546L32.5093 53.7221L31.0124 55.0485ZM29 37.1754V49.7429H31V37.1754H29ZM32.5093 53.7221C31.5369 52.6247 31 51.2092 31 49.7429H29C29 51.698 29.7159 53.5853 31.0124 55.0485L32.5093 53.7221ZM38.2693 57.1754C36.5522 57.1754 34.9174 56.4397 33.7786 55.1546L32.2818 56.481C33.8001 58.1945 35.9799 59.1754 38.2693 59.1754V57.1754ZM114 51.1754C114 54.4891 111.314 57.1754 108 57.1754V59.1754C112.418 59.1754 116 55.5937 116 51.1754H114ZM112.491 35.1472C113.463 36.2446 114 37.6601 114 39.1264H116C116 37.1714 115.284 35.284 113.988 33.8208L112.491 35.1472ZM37 29.1754C32.5817 29.1754 29 32.7571 29 37.1754H31C31 33.8617 33.6863 31.1754 37 31.1754V29.1754ZM106.271 31.1754C107.988 31.1754 109.623 31.9111 110.762 33.1962L112.259 31.8698C110.74 30.1563 108.561 29.1754 106.271 29.1754V31.1754Z"
+                      fill="white"
+                      mask="url(#path-1-inside-1_587_156)" />
+                  </g>
+                  <defs>
+                    <filter
+                      id="filter0_d_587_156"
+                      x="0"
+                      y="0.175415"
+                      width="145"
+                      height="88"
+                      filterUnits="userSpaceOnUse"
+                      color-interpolation-filters="sRGB">
+                      <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                      <feColorMatrix
+                        in="SourceAlpha"
+                        type="matrix"
+                        values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                        result="hardAlpha" />
+                      <feOffset />
+                      <feGaussianBlur stdDeviation="15" />
+                      <feComposite in2="hardAlpha" operator="out" />
+                      <feColorMatrix
+                        type="matrix"
+                        values="0 0 0 0 0.278431 0 0 0 0 0.811765 0 0 0 0 0.45098 0 0 0 0.8 0" />
+                      <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_587_156" />
+                      <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_587_156" result="shape" />
+                    </filter>
+                  </defs>
+                </svg>
+                <p class="absolute" style="top: 35%">بیشتر</p>
+              </button>
+            </div>
+            <div class="flex flex-col gap-4 basis-2/3 border rounded-2xl bg-white/10 backdrop-blur p-4">
+              <h5 class="font-bold text-xl"><span class="text-4xl">✌️</span> همین حالا شروع کن!</h5>
+              <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است،</p>
+              <div class="w-full text-end">
+                <button class="relative">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="145" height="89" viewBox="0 0 145 89" fill="none">
+                    <g filter="url(#filter0_d_587_156)">
+                      <mask id="path-1-inside-1_587_156" fill="white">
+                        <path
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M30 37.1754C30 33.3094 33.134 30.1754 37 30.1754H106.271C108.275 30.1754 110.182 31.0337 111.51 32.533L113.239 34.484C114.374 35.7643 115 37.4158 115 39.1264V51.1754C115 55.0414 111.866 58.1754 108 58.1754H38.2693C36.266 58.1754 34.3588 57.3171 33.0302 55.8178L31.7609 54.3853C30.6264 53.105 30 51.4536 30 49.7429V37.1754Z" />
+                      </mask>
+                      <path
+                        d="M31.7609 54.3853L31.0124 55.0485L31.7609 54.3853ZM33.0302 55.8178L32.2818 56.481L33.0302 55.8178ZM113.239 34.484L112.491 35.1472L113.239 34.484ZM111.51 32.533L112.259 31.8698L111.51 32.533ZM106.271 29.1754H37V31.1754H106.271V29.1754ZM113.988 33.8208L112.259 31.8698L110.762 33.1962L112.491 35.1472L113.988 33.8208ZM116 51.1754V39.1264H114V51.1754H116ZM38.2693 59.1754H108V57.1754H38.2693V59.1754ZM31.0124 55.0485L32.2818 56.481L33.7786 55.1546L32.5093 53.7221L31.0124 55.0485ZM29 37.1754V49.7429H31V37.1754H29ZM32.5093 53.7221C31.5369 52.6247 31 51.2092 31 49.7429H29C29 51.698 29.7159 53.5853 31.0124 55.0485L32.5093 53.7221ZM38.2693 57.1754C36.5522 57.1754 34.9174 56.4397 33.7786 55.1546L32.2818 56.481C33.8001 58.1945 35.9799 59.1754 38.2693 59.1754V57.1754ZM114 51.1754C114 54.4891 111.314 57.1754 108 57.1754V59.1754C112.418 59.1754 116 55.5937 116 51.1754H114ZM112.491 35.1472C113.463 36.2446 114 37.6601 114 39.1264H116C116 37.1714 115.284 35.284 113.988 33.8208L112.491 35.1472ZM37 29.1754C32.5817 29.1754 29 32.7571 29 37.1754H31C31 33.8617 33.6863 31.1754 37 31.1754V29.1754ZM106.271 31.1754C107.988 31.1754 109.623 31.9111 110.762 33.1962L112.259 31.8698C110.74 30.1563 108.561 29.1754 106.271 29.1754V31.1754Z"
+                        fill="white"
+                        mask="url(#path-1-inside-1_587_156)" />
+                    </g>
+                    <defs>
+                      <filter
+                        id="filter0_d_587_156"
+                        x="0"
+                        y="0.175415"
+                        width="145"
+                        height="88"
+                        filterUnits="userSpaceOnUse"
+                        color-interpolation-filters="sRGB">
+                        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                        <feColorMatrix
+                          in="SourceAlpha"
+                          type="matrix"
+                          values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                          result="hardAlpha" />
+                        <feOffset />
+                        <feGaussianBlur stdDeviation="15" />
+                        <feComposite in2="hardAlpha" operator="out" />
+                        <feColorMatrix
+                          type="matrix"
+                          values="0 0 0 0 0.278431 0 0 0 0 0.811765 0 0 0 0 0.45098 0 0 0 0.8 0" />
+                        <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_587_156" />
+                        <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_587_156" result="shape" />
+                      </filter>
+                    </defs>
+                  </svg>
+                  <p class="absolute" style="top: 35%">بیشتر</p>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hidden md:block relative my-32 w-full h-full">
+          <!-- arrow -->
+          <img src="./assets/contest_information/Arrow_1.svg" alt="arrow" class="absolute" style="right: 80%" />
+
+          <img src="./assets/dashLine2.png" alt="dashed line" class="absolute" style="right: 25%; rotate: -15deg" />
+          <img src="./assets/dashLine2.png" alt="dashed line" class="absolute" style="right: 70%; rotate: -160deg" />
+          <img
+            src="./assets/dashLine2.png"
+            alt="dashed line"
+            class="absolute"
+            style="top: 80%; right: 40%; rotate: 80deg" />
+          <img
+            src="./assets/dashLine2.png"
+            alt="dashed line"
+            class="absolute"
+            style="top: 70%; right: 70%; rotate: 155deg" />
+          <!-- backgroundShape -->
+          <img src="./assets/contest_information/desktopShape.svg" alt="shape" class="w-2/4 mx-auto" />
+          <h6 class="text-3xl font-bold text-black text-center top-1/4 mt-16 absolute" style="z-index: 10">
+            اطلاعات مسابقه
+          </h6>
+
+          <div class="w-full absolute h-1/2">
+            <div class="w-full flex justify-center" style="gap: 15%; margin-top: -5%">
+              <div class="flex flex-col items-center gap-2 rounded-2xl bg-white/10 backdrop-blur" style="rotate: 20deg">
+                <img src="./assets/contest_information/download 4.svg" alt="icon" class="w-2/3" />
+                <p class="font-bold text-md">جوایز مسابقه</p>
+                <button class="relative">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="145" height="89" viewBox="0 0 145 89" fill="none">
+                    <g filter="url(#filter0_d_587_156)">
+                      <mask id="path-1-inside-1_587_156" fill="white">
+                        <path
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M30 37.1754C30 33.3094 33.134 30.1754 37 30.1754H106.271C108.275 30.1754 110.182 31.0337 111.51 32.533L113.239 34.484C114.374 35.7643 115 37.4158 115 39.1264V51.1754C115 55.0414 111.866 58.1754 108 58.1754H38.2693C36.266 58.1754 34.3588 57.3171 33.0302 55.8178L31.7609 54.3853C30.6264 53.105 30 51.4536 30 49.7429V37.1754Z" />
+                      </mask>
+                      <path
+                        d="M31.7609 54.3853L31.0124 55.0485L31.7609 54.3853ZM33.0302 55.8178L32.2818 56.481L33.0302 55.8178ZM113.239 34.484L112.491 35.1472L113.239 34.484ZM111.51 32.533L112.259 31.8698L111.51 32.533ZM106.271 29.1754H37V31.1754H106.271V29.1754ZM113.988 33.8208L112.259 31.8698L110.762 33.1962L112.491 35.1472L113.988 33.8208ZM116 51.1754V39.1264H114V51.1754H116ZM38.2693 59.1754H108V57.1754H38.2693V59.1754ZM31.0124 55.0485L32.2818 56.481L33.7786 55.1546L32.5093 53.7221L31.0124 55.0485ZM29 37.1754V49.7429H31V37.1754H29ZM32.5093 53.7221C31.5369 52.6247 31 51.2092 31 49.7429H29C29 51.698 29.7159 53.5853 31.0124 55.0485L32.5093 53.7221ZM38.2693 57.1754C36.5522 57.1754 34.9174 56.4397 33.7786 55.1546L32.2818 56.481C33.8001 58.1945 35.9799 59.1754 38.2693 59.1754V57.1754ZM114 51.1754C114 54.4891 111.314 57.1754 108 57.1754V59.1754C112.418 59.1754 116 55.5937 116 51.1754H114ZM112.491 35.1472C113.463 36.2446 114 37.6601 114 39.1264H116C116 37.1714 115.284 35.284 113.988 33.8208L112.491 35.1472ZM37 29.1754C32.5817 29.1754 29 32.7571 29 37.1754H31C31 33.8617 33.6863 31.1754 37 31.1754V29.1754ZM106.271 31.1754C107.988 31.1754 109.623 31.9111 110.762 33.1962L112.259 31.8698C110.74 30.1563 108.561 29.1754 106.271 29.1754V31.1754Z"
+                        fill="white"
+                        mask="url(#path-1-inside-1_587_156)" />
+                    </g>
+                    <defs>
+                      <filter
+                        id="filter0_d_587_156"
+                        x="0"
+                        y="0.175415"
+                        width="145"
+                        height="88"
+                        filterUnits="userSpaceOnUse"
+                        color-interpolation-filters="sRGB">
+                        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                        <feColorMatrix
+                          in="SourceAlpha"
+                          type="matrix"
+                          values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                          result="hardAlpha" />
+                        <feOffset />
+                        <feGaussianBlur stdDeviation="15" />
+                        <feComposite in2="hardAlpha" operator="out" />
+                        <feColorMatrix
+                          type="matrix"
+                          values="0 0 0 0 0.278431 0 0 0 0 0.811765 0 0 0 0 0.45098 0 0 0 0.8 0" />
+                        <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_587_156" />
+                        <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_587_156" result="shape" />
+                      </filter>
+                    </defs>
+                  </svg>
+                  <p class="absolute" style="top: 35%">بیشتر</p>
+                </button>
+              </div>
+              <div
+                class="flex flex-col items-center gap-2 rounded-2xl bg-white/10 backdrop-blur"
+                style="rotate: -15deg">
+                <img src="./assets/contest_information/download 6.svg" alt="icon" class="w-2/3" />
+                <p class="font-bold text-md">جوایز مسابقه</p>
+                <button class="relative">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="145" height="89" viewBox="0 0 145 89" fill="none">
+                    <g filter="url(#filter0_d_587_156)">
+                      <mask id="path-1-inside-1_587_156" fill="white">
+                        <path
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M30 37.1754C30 33.3094 33.134 30.1754 37 30.1754H106.271C108.275 30.1754 110.182 31.0337 111.51 32.533L113.239 34.484C114.374 35.7643 115 37.4158 115 39.1264V51.1754C115 55.0414 111.866 58.1754 108 58.1754H38.2693C36.266 58.1754 34.3588 57.3171 33.0302 55.8178L31.7609 54.3853C30.6264 53.105 30 51.4536 30 49.7429V37.1754Z" />
+                      </mask>
+                      <path
+                        d="M31.7609 54.3853L31.0124 55.0485L31.7609 54.3853ZM33.0302 55.8178L32.2818 56.481L33.0302 55.8178ZM113.239 34.484L112.491 35.1472L113.239 34.484ZM111.51 32.533L112.259 31.8698L111.51 32.533ZM106.271 29.1754H37V31.1754H106.271V29.1754ZM113.988 33.8208L112.259 31.8698L110.762 33.1962L112.491 35.1472L113.988 33.8208ZM116 51.1754V39.1264H114V51.1754H116ZM38.2693 59.1754H108V57.1754H38.2693V59.1754ZM31.0124 55.0485L32.2818 56.481L33.7786 55.1546L32.5093 53.7221L31.0124 55.0485ZM29 37.1754V49.7429H31V37.1754H29ZM32.5093 53.7221C31.5369 52.6247 31 51.2092 31 49.7429H29C29 51.698 29.7159 53.5853 31.0124 55.0485L32.5093 53.7221ZM38.2693 57.1754C36.5522 57.1754 34.9174 56.4397 33.7786 55.1546L32.2818 56.481C33.8001 58.1945 35.9799 59.1754 38.2693 59.1754V57.1754ZM114 51.1754C114 54.4891 111.314 57.1754 108 57.1754V59.1754C112.418 59.1754 116 55.5937 116 51.1754H114ZM112.491 35.1472C113.463 36.2446 114 37.6601 114 39.1264H116C116 37.1714 115.284 35.284 113.988 33.8208L112.491 35.1472ZM37 29.1754C32.5817 29.1754 29 32.7571 29 37.1754H31C31 33.8617 33.6863 31.1754 37 31.1754V29.1754ZM106.271 31.1754C107.988 31.1754 109.623 31.9111 110.762 33.1962L112.259 31.8698C110.74 30.1563 108.561 29.1754 106.271 29.1754V31.1754Z"
+                        fill="white"
+                        mask="url(#path-1-inside-1_587_156)" />
+                    </g>
+                    <defs>
+                      <filter
+                        id="filter0_d_587_156"
+                        x="0"
+                        y="0.175415"
+                        width="145"
+                        height="88"
+                        filterUnits="userSpaceOnUse"
+                        color-interpolation-filters="sRGB">
+                        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                        <feColorMatrix
+                          in="SourceAlpha"
+                          type="matrix"
+                          values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                          result="hardAlpha" />
+                        <feOffset />
+                        <feGaussianBlur stdDeviation="15" />
+                        <feComposite in2="hardAlpha" operator="out" />
+                        <feColorMatrix
+                          type="matrix"
+                          values="0 0 0 0 0.278431 0 0 0 0 0.811765 0 0 0 0 0.45098 0 0 0 0.8 0" />
+                        <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_587_156" />
+                        <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_587_156" result="shape" />
+                      </filter>
+                    </defs>
+                  </svg>
+                  <p class="absolute" style="top: 35%">بیشتر</p>
+                </button>
+              </div>
+            </div>
+            <div class="w-full flex justify-center" style="gap: 15%; margin-top: 5%">
+              <div
+                class="flex flex-col items-center gap-2 rounded-2xl bg-white/10 backdrop-blur"
+                style="rotate: -10deg">
+                <img src="./assets/contest_information/download 3.svg" alt="icon" class="w-2/3" />
+                <p class="font-bold text-md">جوایز مسابقه</p>
+                <button class="relative">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="145" height="89" viewBox="0 0 145 89" fill="none">
+                    <g filter="url(#filter0_d_587_156)">
+                      <mask id="path-1-inside-1_587_156" fill="white">
+                        <path
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M30 37.1754C30 33.3094 33.134 30.1754 37 30.1754H106.271C108.275 30.1754 110.182 31.0337 111.51 32.533L113.239 34.484C114.374 35.7643 115 37.4158 115 39.1264V51.1754C115 55.0414 111.866 58.1754 108 58.1754H38.2693C36.266 58.1754 34.3588 57.3171 33.0302 55.8178L31.7609 54.3853C30.6264 53.105 30 51.4536 30 49.7429V37.1754Z" />
+                      </mask>
+                      <path
+                        d="M31.7609 54.3853L31.0124 55.0485L31.7609 54.3853ZM33.0302 55.8178L32.2818 56.481L33.0302 55.8178ZM113.239 34.484L112.491 35.1472L113.239 34.484ZM111.51 32.533L112.259 31.8698L111.51 32.533ZM106.271 29.1754H37V31.1754H106.271V29.1754ZM113.988 33.8208L112.259 31.8698L110.762 33.1962L112.491 35.1472L113.988 33.8208ZM116 51.1754V39.1264H114V51.1754H116ZM38.2693 59.1754H108V57.1754H38.2693V59.1754ZM31.0124 55.0485L32.2818 56.481L33.7786 55.1546L32.5093 53.7221L31.0124 55.0485ZM29 37.1754V49.7429H31V37.1754H29ZM32.5093 53.7221C31.5369 52.6247 31 51.2092 31 49.7429H29C29 51.698 29.7159 53.5853 31.0124 55.0485L32.5093 53.7221ZM38.2693 57.1754C36.5522 57.1754 34.9174 56.4397 33.7786 55.1546L32.2818 56.481C33.8001 58.1945 35.9799 59.1754 38.2693 59.1754V57.1754ZM114 51.1754C114 54.4891 111.314 57.1754 108 57.1754V59.1754C112.418 59.1754 116 55.5937 116 51.1754H114ZM112.491 35.1472C113.463 36.2446 114 37.6601 114 39.1264H116C116 37.1714 115.284 35.284 113.988 33.8208L112.491 35.1472ZM37 29.1754C32.5817 29.1754 29 32.7571 29 37.1754H31C31 33.8617 33.6863 31.1754 37 31.1754V29.1754ZM106.271 31.1754C107.988 31.1754 109.623 31.9111 110.762 33.1962L112.259 31.8698C110.74 30.1563 108.561 29.1754 106.271 29.1754V31.1754Z"
+                        fill="white"
+                        mask="url(#path-1-inside-1_587_156)" />
+                    </g>
+                    <defs>
+                      <filter
+                        id="filter0_d_587_156"
+                        x="0"
+                        y="0.175415"
+                        width="145"
+                        height="88"
+                        filterUnits="userSpaceOnUse"
+                        color-interpolation-filters="sRGB">
+                        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                        <feColorMatrix
+                          in="SourceAlpha"
+                          type="matrix"
+                          values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                          result="hardAlpha" />
+                        <feOffset />
+                        <feGaussianBlur stdDeviation="15" />
+                        <feComposite in2="hardAlpha" operator="out" />
+                        <feColorMatrix
+                          type="matrix"
+                          values="0 0 0 0 0.278431 0 0 0 0 0.811765 0 0 0 0 0.45098 0 0 0 0.8 0" />
+                        <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_587_156" />
+                        <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_587_156" result="shape" />
+                      </filter>
+                    </defs>
+                  </svg>
+                  <p class="absolute" style="top: 35%">بیشتر</p>
+                </button>
+              </div>
+              <div class="flex flex-col items-center gap-2 rounded-2xl bg-white/10 backdrop-blur" style="rotate: 15deg">
+                <img src="./assets/contest_information/download 3.svg" alt="icon" class="w-2/3" />
+                <p class="font-bold text-md">جوایز مسابقه</p>
+                <button class="relative">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="145" height="89" viewBox="0 0 145 89" fill="none">
+                    <g filter="url(#filter0_d_587_156)">
+                      <mask id="path-1-inside-1_587_156" fill="white">
+                        <path
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M30 37.1754C30 33.3094 33.134 30.1754 37 30.1754H106.271C108.275 30.1754 110.182 31.0337 111.51 32.533L113.239 34.484C114.374 35.7643 115 37.4158 115 39.1264V51.1754C115 55.0414 111.866 58.1754 108 58.1754H38.2693C36.266 58.1754 34.3588 57.3171 33.0302 55.8178L31.7609 54.3853C30.6264 53.105 30 51.4536 30 49.7429V37.1754Z" />
+                      </mask>
+                      <path
+                        d="M31.7609 54.3853L31.0124 55.0485L31.7609 54.3853ZM33.0302 55.8178L32.2818 56.481L33.0302 55.8178ZM113.239 34.484L112.491 35.1472L113.239 34.484ZM111.51 32.533L112.259 31.8698L111.51 32.533ZM106.271 29.1754H37V31.1754H106.271V29.1754ZM113.988 33.8208L112.259 31.8698L110.762 33.1962L112.491 35.1472L113.988 33.8208ZM116 51.1754V39.1264H114V51.1754H116ZM38.2693 59.1754H108V57.1754H38.2693V59.1754ZM31.0124 55.0485L32.2818 56.481L33.7786 55.1546L32.5093 53.7221L31.0124 55.0485ZM29 37.1754V49.7429H31V37.1754H29ZM32.5093 53.7221C31.5369 52.6247 31 51.2092 31 49.7429H29C29 51.698 29.7159 53.5853 31.0124 55.0485L32.5093 53.7221ZM38.2693 57.1754C36.5522 57.1754 34.9174 56.4397 33.7786 55.1546L32.2818 56.481C33.8001 58.1945 35.9799 59.1754 38.2693 59.1754V57.1754ZM114 51.1754C114 54.4891 111.314 57.1754 108 57.1754V59.1754C112.418 59.1754 116 55.5937 116 51.1754H114ZM112.491 35.1472C113.463 36.2446 114 37.6601 114 39.1264H116C116 37.1714 115.284 35.284 113.988 33.8208L112.491 35.1472ZM37 29.1754C32.5817 29.1754 29 32.7571 29 37.1754H31C31 33.8617 33.6863 31.1754 37 31.1754V29.1754ZM106.271 31.1754C107.988 31.1754 109.623 31.9111 110.762 33.1962L112.259 31.8698C110.74 30.1563 108.561 29.1754 106.271 29.1754V31.1754Z"
+                        fill="white"
+                        mask="url(#path-1-inside-1_587_156)" />
+                    </g>
+                    <defs>
+                      <filter
+                        id="filter0_d_587_156"
+                        x="0"
+                        y="0.175415"
+                        width="145"
+                        height="88"
+                        filterUnits="userSpaceOnUse"
+                        color-interpolation-filters="sRGB">
+                        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                        <feColorMatrix
+                          in="SourceAlpha"
+                          type="matrix"
+                          values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                          result="hardAlpha" />
+                        <feOffset />
+                        <feGaussianBlur stdDeviation="15" />
+                        <feComposite in2="hardAlpha" operator="out" />
+                        <feColorMatrix
+                          type="matrix"
+                          values="0 0 0 0 0.278431 0 0 0 0 0.811765 0 0 0 0 0.45098 0 0 0 0.8 0" />
+                        <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_587_156" />
+                        <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_587_156" result="shape" />
+                      </filter>
+                    </defs>
+                  </svg>
+                  <p class="absolute" style="top: 35%">بیشتر</p>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <img src="./assets/contest_information/Arrow_2.svg" alt="arrow" class="mr-16" />
+        </div>
+      </section>
+
+      <!-- == contest gallery == -->
+      <section class="my-20">
+        <h3 class="text-2xl mx-4">گالری تصاویر</h3>
+        <div class="mt-10 mx-auto flex flex-wrap justify-center md:max-w-6xl">
+          <img src="./assets/gallery/ (1).png" alt="image" class="max-w-[15rem] md:max-w-[20rem]" />
+          <img src="./assets/gallery/ (2).png" alt="image" class="max-w-[15rem] md:max-w-[20rem]" />
+          <img src="./assets/gallery/ (3).png" alt="image" class="max-w-[15rem] md:max-w-[20rem]" />
+          <img src="./assets/gallery/ (4).png" alt="image" class="max-w-[15rem] md:max-w-[20rem]" />
+          <img src="./assets/gallery/ (5).png" alt="image" class="max-w-[15rem] md:max-w-[20rem]" />
+          <img src="./assets/gallery/ (6).png" alt="image" class="max-w-[15rem] md:max-w-[20rem]" />
+          <img src="./assets/gallery/ (7).png" alt="image" class="max-w-[15rem] md:max-w-[20rem]" />
+          <img src="./assets/gallery/ (5).png" alt="image" class="max-w-[15rem] md:max-w-[20rem]" />
+        </div>
+      </section>
+
+      <!-- == contest Team == -->
+      <section class="my-20">
+        <h3 class="text-2xl font-bold">تیم ما</h3>
+        <div class="flex justify-center gap-14 flex-wrap md:max-w-8xl">
+          <img src="./assets/contest_team/ (1).png" alt="" class="aspect-square object-cover" />
+          <img src="./assets/contest_team/ (1).png" alt="" class="aspect-square object-cover" />
+          <img src="./assets/contest_team/ (2).png" alt="" class="aspect-square object-cover" />
+          <img src="./assets/contest_team/ (3).png" alt="" class="aspect-square object-cover" />
+          <img src="./assets/contest_team/ (4).png" alt="" class="aspect-square object-cover" />
+          <img src="./assets/contest_team/ (1).png" alt="" class="aspect-square object-cover" />
+          <img src="./assets/contest_team/ (1).png" alt="" class="aspect-square object-cover" />
+          <img src="./assets/contest_team/ (2).png" alt="" class="aspect-square object-cover" />
+          <img src="./assets/contest_team/ (3).png" alt="" class="aspect-square object-cover" />
+          <img src="./assets/contest_team/ (4).png" alt="" class="aspect-square object-cover" />
+        </div>
+      </section>
+
+      <!-- == contact us == -->
+      <section class="my-20">
+        <h3 class="text-2xl font-bold mx-8">تماس با ما</h3>
+
+        <div class="flex justify-around my-4">
+          <!-- call -->
+          <div
+            class="md:text-gray-500 flex-row-reverse md:flex-row border-0 md:border rounded-xl inline-flex justify-between gap-6 p-4 text-xs">
+            <div class="flex gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M9.57072 10.4331C13.2274 14.0887 14.0569 9.85957 16.3851 12.1862C18.6297 14.4301 19.9198 14.8797 17.0759 17.7227C16.7197 18.009 14.4564 21.4532 6.50251 13.5014C-1.4524 5.54875 1.98975 3.28316 2.2761 2.92704C5.12684 0.0761066 5.56867 1.37368 7.81324 3.61763C10.1415 5.9452 5.91406 6.77746 9.57072 10.4331Z"
+                  stroke="#636267"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+              <p class="hidden md:block">شماره کارشناس:</p>
+            </div>
+            <p>09354444274</p>
+          </div>
+
+          <!-- email -->
+          <div
+            class="md:bg-[#47cf73] rounded-xl inline-flex flex-row-reverse md:flex-row items-center justify-between gap-6 p-4 text-xs">
+            <div class="flex gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="18" viewBox="0 0 20 18" fill="none">
+                <path
+                  d="M15.4107 6.11353L11.3377 9.42548C10.5681 10.036 9.48544 10.036 8.71591 9.42548L4.60852 6.11353"
+                  stroke="white"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round" />
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M14.4998 17.25C17.2877 17.2577 19.1666 14.9671 19.1666 12.1518V5.85584C19.1666 3.04059 17.2877 0.75 14.4998 0.75H5.50019C2.71228 0.75 0.833313 3.04059 0.833313 5.85584V12.1518C0.833313 14.9671 2.71228 17.2577 5.50019 17.25H14.4998Z"
+                  stroke="white"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+              <p class="hidden md:block">ایمیل</p>
+            </div>
+            <p>namadin@gmail.com</p>
+          </div>
+
+          <!-- instagram -->
+          <div class="hidden md:block text-gray-500 border rounded-xl inline-flex justify-between gap-6 p-4 text-xs">
+            <div class="flex gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+                <g clip-path="url(#clip0_1_510)">
+                  <path
+                    d="M11 1.98183C13.937 1.98183 14.2853 1.99283 15.4449 2.046C16.6439 2.101 17.8787 2.37417 18.7523 3.24775C19.6341 4.12958 19.899 5.35242 19.954 6.55508C20.0072 7.71467 20.0182 8.063 20.0182 11C20.0182 13.937 20.0072 14.2853 19.954 15.4449C19.8999 16.6375 19.6203 17.8842 18.7523 18.7523C17.8704 19.6341 16.6485 19.899 15.4449 19.954C14.2853 20.0072 13.937 20.0182 11 20.0182C8.063 20.0182 7.71467 20.0072 6.55508 19.954C5.37167 19.8999 4.1085 19.6139 3.24775 18.7523C2.3705 17.875 2.101 16.6403 2.046 15.4449C1.99283 14.2853 1.98183 13.937 1.98183 11C1.98183 8.063 1.99283 7.71467 2.046 6.55508C2.10008 5.36708 2.38242 4.11308 3.24775 3.24775C4.12775 2.36775 5.35517 2.101 6.55508 2.046C7.71467 1.99283 8.063 1.98183 11 1.98183ZM11 0C8.01258 0 7.63767 0.0128333 6.46433 0.066C4.76392 0.143917 3.07542 0.616917 1.84617 1.84617C0.612333 3.08 0.143917 4.76483 0.066 6.46433C0.0128333 7.63767 0 8.01258 0 11C0 13.9874 0.0128333 14.3623 0.066 15.5357C0.143917 17.2343 0.61875 18.9273 1.84617 20.1538C3.07908 21.3868 4.76667 21.8561 6.46433 21.934C7.63767 21.9872 8.01258 22 11 22C13.9874 22 14.3623 21.9872 15.5357 21.934C17.2352 21.8561 18.9255 21.3822 20.1538 20.1538C21.3886 18.9191 21.8561 17.2352 21.934 15.5357C21.9872 14.3623 22 13.9874 22 11C22 8.01258 21.9872 7.63767 21.934 6.46433C21.8561 4.76392 21.3822 3.0745 20.1538 1.84617C18.9228 0.615083 17.2306 0.143 15.5357 0.066C14.3623 0.0128333 13.9874 0 11 0Z"
+                    fill="#636267"
+                    fill-opacity="0.8" />
+                  <path
+                    d="M11 5.35156C7.88058 5.35156 5.3515 7.88064 5.3515 11.0001C5.3515 14.1195 7.88058 16.6486 11 16.6486C14.1194 16.6486 16.6485 14.1195 16.6485 11.0001C16.6485 7.88064 14.1194 5.35156 11 5.35156ZM11 14.6667C8.97508 14.6667 7.33333 13.025 7.33333 11.0001C7.33333 8.97514 8.97508 7.33339 11 7.33339C13.0249 7.33339 14.6667 8.97514 14.6667 11.0001C14.6667 13.025 13.0249 14.6667 11 14.6667Z"
+                    fill="#636267"
+                    fill-opacity="0.8" />
+                  <path
+                    d="M16.8722 6.44786C17.6012 6.44786 18.1922 5.85688 18.1922 5.12786C18.1922 4.39885 17.6012 3.80786 16.8722 3.80786C16.1431 3.80786 15.5522 4.39885 15.5522 5.12786C15.5522 5.85688 16.1431 6.44786 16.8722 6.44786Z"
+                    fill="#636267"
+                    fill-opacity="0.8" />
+                </g>
+                <defs>
+                  <clipPath id="clip0_1_510">
+                    <rect width="22" height="22" fill="white" />
+                  </clipPath>
+                </defs>
+              </svg>
+              <p>اینستاگرام:</p>
+            </div>
+            <p>@ubcomp4</p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- ==== Footer ==== -->
+    <footer class="mb-5">
+      <p class="text-center">تمام حقوق برای تیم پارشوماش محفوظ است.</p>
+    </footer>
+
+    <!-- ==== Script === -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>

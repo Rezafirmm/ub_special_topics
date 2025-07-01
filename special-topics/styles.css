@@ -1,0 +1,86 @@
+* {
+  padding: 0;
+  margin: 0;
+  inset: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: 'Peyda';
+  src: url('./fonts/peyda-light.ttf') format('truetype');
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: 'Peyda';
+  src: url('./fonts/Peyda-Regular.ttf') format('truetype');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Peyda';
+  src: url('./fonts/Peyda-Medium.ttf') format('truetype');
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'Peyda';
+  src: url('./fonts/Peyda-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: 'Peyda';
+  src: url('./fonts/Peyda-Bold.ttf') format('truetype');
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'Peyda';
+  src: url('./fonts/Peyda-Black.ttf') format('truetype');
+  font-weight: 900;
+}
+
+@layer base {
+  :root {
+    --bg-dark: #131417;
+    --primary-color: #47cf73;
+  }
+}
+
+html,
+body {
+  background-color: var(--bg-dark);
+  color: white;
+  font-family: 'Peyda', sans-serif;
+  user-select: none !important;
+}
+
+
+@layer utilities {
+  .text-primary {
+    color: var(--primary-color) !important;
+  }
+  .bg-dark {
+    background-color: var(--bg-dark);
+  }
+}
+
+header {
+  max-height: 15% ;
+}
+#mainHeader {
+  background-color: transparent;
+  backdrop-filter: blur(0);
+  border-bottom: 1px solid transparent;
+  transition: background-color 0.3s ease, backdrop-filter 0.3s ease, border-bottom-color 0.3s ease;
+}
+
+#mainHeader.scrolled {
+  background-color: rgba(19, 21, 24, 0.7);
+  backdrop-filter: blur(10px);
+  border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+
+/* =========================== header Ended  */
+
