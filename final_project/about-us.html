@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="fa-IR" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Tailwindcss -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@latest/dist/tailwind.min.css" rel="stylesheet" />
+    <!-- Custom css -->
+    <link rel="stylesheet" href="styles.css" />
+
+    <title>About us</title>
+  </head>
+  <body class="bg-dark min-h-screen 2xl:max-w-screen-2xl mx-auto">
+    <!-- ==== Header ==== -->
+    <header class="w-full fixed mx-auto top-0 z-50 transition-all duration-300 bg-transparent">
+      <div id="mainHeader" class="flex h-full justify-between items-center px-8 md:pt-8 py-5">
+        <!-- menu -->
+        <button class="md:hidden" id="menuToggle">
+          <svg id="iconOpen" xmlns="http://www.w3.org/2000/svg" width="27" height="16" viewBox="0 0 27 16" fill="none">
+            <line x1="26.25" y1="0.75" x2="0.75" y2="0.75" stroke="white" stroke-width="1.5" stroke-linecap="round" />
+            <line x1="26.25" y1="7.75" x2="0.75" y2="7.75" stroke="white" stroke-width="1.5" stroke-linecap="round" />
+            <line x1="26.25" y1="14.75" x2="0.75" y2="14.75" stroke="white" stroke-width="1.5" stroke-linecap="round" />
+          </svg>
+
+          <svg
+            id="iconClose"
+            class="hidden"
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="white"
+            stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+
+        <!-- mobile menu -->
+        <div
+          id="mobileMenu"
+          class="absolute flex flex-col p-4 gap-8 z-20 bg-gray-800 transition-all duration-200 mx-auto rounded-lg"
+          style="width: 90%; top: 90%; height: 250px">
+          <a href="#">تماس با ما</a>
+          <a href="#">درباره ما</a>
+          <a href="#">خانه</a>
+        </div>
+
+        <!-- logo -->
+        <div class="flex items-center gap-20">
+          <div class="flex flex-col items-center">
+            <img src="./assets/Logo.svg" alt="logo" class="m-0" />
+            <span class="hidden md:inline-flex">
+              <p class="text-center text-white font-bold">
+                UBComp5 <br />
+                ACM
+              </p>
+            </span>
+          </div>
+
+          <nav class="hidden md:flex text-white gap-8">
+            <a href="#">خانه</a>
+            <a href="#">درباره ما</a>
+            <a href="#">تماس با ما</a>
+          </nav>
+        </div>
+
+        <!-- login -->
+        <button
+          type="button"
+          class="relative inline-block cursor-pointer hover:opacity-90 transition-opacity focus:outline-none">
+          <div class="relative hidden md:inline-block">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="216"
+              height="106"
+              viewBox="0 0 216 106"
+              fill="none"
+              style="fill: #47cf73; filter: drop-shadow(0px 0px 30px rgba(71, 207, 115, 0.8))">
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M30 37C30 33.134 33.134 30 37 30H172.862C174.718 30 176.499 30.7375 177.811 32.0502L183.95 38.1885C185.262 39.5013 186 41.2818 186 43.1383V68.5351C186 72.4011 182.866 75.5351 179 75.5351H42.295C40.4385 75.5351 38.658 74.7976 37.3453 73.4849L32.0503 68.1898C30.7375 66.8771 30 65.0966 30 63.2401V37Z"
+                fill="#47CF73" />
+            </svg>
+            <span class="absolute inset-0 flex items-center justify-center text-black font-bold pointer-events-none">
+              ثبت نام / ورود
+            </span>
+          </div>
+          <span class="md:hidden text-primary text-sm font-bold">ثبت نام / ورود</span>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <!-- == About us Img and Text == -->
+      <section class="mt-32 w-full">
+        <div class="relative w-full h-[20rem] overflow-hidden">
+          <span
+            class="border-t border-r block absolute top-0"
+            style="border-color: #47cf73; width: 5rem; height: 5rem"></span>
+          <img src="./assets/aboutus.jpg" alt="aboutus" class="w-full h-full object-cover p-1" />
+          <span
+            class="hidden md:block border-b border-l absolute"
+            style="bottom: 0; top: auto; right: auto; left: 0; border-color: #47cf73; width: 5rem; height: 5rem"></span>
+        </div>
+
+        <div class="mt-12 px-2 mx-auto">
+          <h3 class="text-2xl font-bold">درباره ما</h3>
+          <p class="mt-10">
+            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون
+            بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع
+            با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه
+            و متخصصان را می طلبد، تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی، و
+            فرهنگ پیشرو در زبان فارسی ایجاد کرد، در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها،
+            و شرایط سخت تایپ به پایان رسد و زمان مورد نیاز شامل حروفچینی دستاوردهای اصلی، و جوابگوی سوالات پیوسته اهل
+            دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.
+          </p>
+        </div>
+      </section>
+
+      <!-- == banner == -->
+      <section class="w-full mt-28">
+        <div class="bg-white p-5">
+          <!-- images -->
+          <div class="flex items-center justify-around gap-8">
+            <div style="filter: grayscale(100%)">
+              <img src="./assets/banner/amigh.png" alt="logo" />
+            </div>
+            <div style="filter: grayscale(100%)">
+              <img src="./assets/banner/bojnurd.png" alt="logo" />
+            </div>
+            <div style="filter: grayscale(100%)">
+              <img src="./assets/banner/daria.png" alt="logo" />
+            </div>
+            <div style="filter: grayscale(100%)">
+              <img src="./assets/banner/snapp.png" alt="logo" />
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- == contact us == -->
+      <section class="my-20">
+        <h3 class="text-2xl font-bold mx-8 md:hidden">راه های ارتباطی</h3>
+
+        <div class="flex flex-col md:flex-row gap-4 justify-around w-3/4 mx-auto mt-10">
+          <div class="flex text-gray-400 gap-8 justify-between border rounded-xl p-4">
+            <div class="flex items-center justify-center gap-4">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M9.57084 10.433C13.2275 14.0887 14.057 9.85951 16.3853 12.1861C18.6298 14.43 19.9199 14.8796 17.0761 17.7227C16.7198 18.009 14.4566 21.4531 6.50263 13.5014C-1.45227 5.54869 1.98987 3.28309 2.27622 2.92697C5.12696 0.0760455 5.56879 1.37362 7.81336 3.61757C10.1416 5.94514 5.91418 6.7774 9.57084 10.433Z"
+                  stroke="#636267"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+              <p>شماره کارشناس</p>
+            </div>
+            <p>09354444274</p>
+          </div>
+          <div class="flex text-gray-400 gap-8 md:text-white md:bg-[#47cf73] md:border-none justify-between border rounded-xl p-4">
+            <div class="flex items-center justify-center gap-4">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="18" viewBox="0 0 20 18" fill="none">
+                <path
+                  d="M15.4108 6.11353L11.3378 9.42548C10.5683 10.036 9.48557 10.036 8.71603 9.42548L4.60864 6.11353"
+                  stroke="white"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round" />
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M14.4997 17.25C17.2876 17.2577 19.1666 14.9671 19.1666 12.1518V5.85584C19.1666 3.04059 17.2876 0.75 14.4997 0.75H5.50013C2.71222 0.75 0.833252 3.04059 0.833252 5.85584V12.1518C0.833252 14.9671 2.71222 17.2577 5.50013 17.25H14.4997Z"
+                  stroke="white"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+              <p>ایمیل</p>
+            </div>
+            <p>namadin@gmail.com</p>
+          </div>
+          <div class="flex text-gray-400 gap-8 justify-between border rounded-xl p-4">
+            <div class="flex items-center justify-center gap-4">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+                <g clip-path="url(#clip0_876_120)">
+                  <path
+                    d="M11 1.98183C13.937 1.98183 14.2853 1.99283 15.4449 2.046C16.6439 2.101 17.8787 2.37417 18.7523 3.24775C19.6341 4.12958 19.899 5.35242 19.954 6.55508C20.0072 7.71467 20.0182 8.063 20.0182 11C20.0182 13.937 20.0072 14.2853 19.954 15.4449C19.8999 16.6375 19.6203 17.8842 18.7523 18.7523C17.8704 19.6341 16.6485 19.899 15.4449 19.954C14.2853 20.0072 13.937 20.0182 11 20.0182C8.063 20.0182 7.71467 20.0072 6.55508 19.954C5.37167 19.8999 4.1085 19.6139 3.24775 18.7523C2.3705 17.875 2.101 16.6403 2.046 15.4449C1.99283 14.2853 1.98183 13.937 1.98183 11C1.98183 8.063 1.99283 7.71467 2.046 6.55508C2.10008 5.36708 2.38242 4.11308 3.24775 3.24775C4.12775 2.36775 5.35517 2.101 6.55508 2.046C7.71467 1.99283 8.063 1.98183 11 1.98183ZM11 0C8.01258 0 7.63767 0.0128333 6.46433 0.066C4.76392 0.143917 3.07542 0.616917 1.84617 1.84617C0.612333 3.08 0.143917 4.76483 0.066 6.46433C0.0128333 7.63767 0 8.01258 0 11C0 13.9874 0.0128333 14.3623 0.066 15.5357C0.143917 17.2343 0.61875 18.9273 1.84617 20.1538C3.07908 21.3868 4.76667 21.8561 6.46433 21.934C7.63767 21.9872 8.01258 22 11 22C13.9874 22 14.3623 21.9872 15.5357 21.934C17.2352 21.8561 18.9255 21.3822 20.1538 20.1538C21.3886 18.9191 21.8561 17.2352 21.934 15.5357C21.9872 14.3623 22 13.9874 22 11C22 8.01258 21.9872 7.63767 21.934 6.46433C21.8561 4.76392 21.3822 3.0745 20.1538 1.84617C18.9228 0.615083 17.2306 0.143 15.5357 0.066C14.3623 0.0128333 13.9874 0 11 0Z"
+                    fill="#636267"
+                    fill-opacity="0.8" />
+                  <path
+                    d="M11.0001 5.3515C7.88064 5.3515 5.35156 7.88058 5.35156 11C5.35156 14.1194 7.88064 16.6485 11.0001 16.6485C14.1195 16.6485 16.6486 14.1194 16.6486 11C16.6486 7.88058 14.1195 5.3515 11.0001 5.3515ZM11.0001 14.6667C8.97514 14.6667 7.33339 13.0249 7.33339 11C7.33339 8.97508 8.97514 7.33333 11.0001 7.33333C13.025 7.33333 14.6667 8.97508 14.6667 11C14.6667 13.0249 13.025 14.6667 11.0001 14.6667Z"
+                    fill="#636267"
+                    fill-opacity="0.8" />
+                  <path
+                    d="M16.8722 6.44786C17.6013 6.44786 18.1922 5.85688 18.1922 5.12786C18.1922 4.39885 17.6013 3.80786 16.8722 3.80786C16.1432 3.80786 15.5522 4.39885 15.5522 5.12786C15.5522 5.85688 16.1432 6.44786 16.8722 6.44786Z"
+                    fill="#636267"
+                    fill-opacity="0.8" />
+                </g>
+                <defs>
+                  <clipPath id="clip0_876_120">
+                    <rect width="22" height="22" fill="white" />
+                  </clipPath>
+                </defs>
+              </svg>
+              <p>اینستاگرام</p>
+            </div>
+            <p>@ubcomp4</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ==== Script ==== -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
